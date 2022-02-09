@@ -47,5 +47,10 @@ public class Produtos {
 	public void setMaxDescontoPermitido(Double maxDescontoPermitido) {
 		this.maxDescontoPermitido = maxDescontoPermitido;
 	}
+	@Override
+	public String toString() {
+		return "Produtos [id=" + id + ", nome=" + nome + ", quantidadeEstoque=" + quantidadeEstoque + ", preco=" + preco
+				+ ", maxDescontoPermitido=" + maxDescontoPermitido + "]";
+	}
 
 }
