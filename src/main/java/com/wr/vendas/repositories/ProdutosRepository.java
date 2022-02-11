@@ -42,6 +42,7 @@ public class ProdutosRepository {
 	public Produtos buscaPorId(Long id) {
 		return produtosList.stream()
 				.filter(p -> p.getId().equals(id))
+				.findFirst()
 				.orElse(null);
 	}
 	public void update(Produtos produtos) {
