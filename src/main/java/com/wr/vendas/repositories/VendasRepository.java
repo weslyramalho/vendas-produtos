@@ -2,6 +2,7 @@ package com.wr.vendas.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -10,11 +11,10 @@ import com.wr.vendas.entities.Vendas;
 
 @Repository
 public class VendasRepository {
-	private final List<Produtos> produtosList;
+
 	private final List<Vendas> vendasList;
 	
 	public VendasRepository() {
-		this.produtosList = new ArrayList<>();
 		this.vendasList = new ArrayList<>();
 	}
 	
@@ -32,8 +32,8 @@ public class VendasRepository {
 	
 	public List<Vendas> buscarVendasPorProduto(Produtos produtos){
 		return vendasList.stream()
-				.filter(v -> v.getProduto().equalsIgnoreCase(produtos))
-				.collect(collectors.toList());
+				.filter(v -> v.getProdutos().equals(produtos))
+				.collect(Collectors.toList());
 	}
 	 public List<Vendas> listarVendas(){
 		 return vendasList;
