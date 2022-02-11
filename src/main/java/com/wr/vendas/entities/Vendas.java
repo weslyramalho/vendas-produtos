@@ -3,7 +3,7 @@ package com.wr.vendas.entities;
 public class Vendas {
 	private Long id;
 	private Long quantidade;
-	private Integer desconto;
+	private Double desconto;
 	
 	private Produtos produtos;
 	
@@ -11,7 +11,7 @@ public class Vendas {
 		
 	}
 
-	public Vendas(Long id,Long quantidade, Integer desconto, Produtos produtos) {
+	public Vendas(Long id,Long quantidade, Double desconto, Produtos produtos) {
 		this.id = id;
 		this.quantidade = quantidade;
 		this.desconto = desconto;
@@ -26,11 +26,11 @@ public class Vendas {
 		this.quantidade = quantidade;
 	}
 
-	public Integer getDesconto() {
+	public Double getDesconto() {
 		return desconto;
 	}
 
-	public void setDesconto(Integer desconto) {
+	public void setDesconto(Double desconto) {
 		this.desconto = desconto;
 	}
 
@@ -48,6 +48,10 @@ public class Vendas {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public Double precoTotal() {
+		return produtos.getTamanhoDesconto(desconto) * quantidade;
 	}
 	
 	
