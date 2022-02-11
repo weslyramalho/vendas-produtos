@@ -44,6 +44,24 @@ public class ProdutosRepository {
 				.filter(p -> p.getId().equals(id))
 				.orElse(null);
 	}
+	public void update(Produtos produtos) {
+		produtosList.stream()
+		.filter(p-> p.getId().equals(produtos.getId()))
+		.forEach(p -> p.setNome(produtos.getNome()));
+		
+		produtosList.stream()
+		.filter(p-> p.getId().equals(produtos.getId()))
+		.forEach(p -> p.setQuantidadeEstoque(produtos.getQuantidadeEstoque()));
+		
+		produtosList.stream()
+		.filter(p-> p.getId().equals(produtos.getId()))
+		.forEach(p -> p.setPreco(produtos.getPreco()));
+		
+		produtosList.stream()
+		.filter(p-> p.getId().equals(produtos.getId()))
+		.forEach(p -> p.setMaxDescontoPermitido(produtos.getMaxDescontoPermitido()));
+		
+	}
 	
 
 }
