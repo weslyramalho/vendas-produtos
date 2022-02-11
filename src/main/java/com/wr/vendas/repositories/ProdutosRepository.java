@@ -2,6 +2,7 @@ package com.wr.vendas.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,12 @@ public class ProdutosRepository {
 	
 	public void remove(Long id) {
 		produtosList.removeIf(p -> p.getId() == id);
+	}
+	
+	public List<Produtos> buscarProdutoPorNome(String produtos){
+		return produtosList.stream()
+				.filter(p -> p.getNome().equalsIgnoreCase(produtos))
+				.collect(Collectors.toList());
 	}
 	
 
