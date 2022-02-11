@@ -47,6 +47,13 @@ public class Produtos {
 	public void setMaxDescontoPermitido(Double maxDescontoPermitido) {
 		this.maxDescontoPermitido = maxDescontoPermitido;
 	}
+	public Double getTamanhoDesconto(final Double desconto) {
+		if (desconto > maxDescontoPermitido) {
+			return preco * (1 - maxDescontoPermitido);
+		} else {
+			return preco * (1 - desconto);
+		}
+	}
 	@Override
 	public String toString() {
 		return "Produtos [id=" + id + ", nome=" + nome + ", quantidadeEstoque=" + quantidadeEstoque + ", preco=" + preco
