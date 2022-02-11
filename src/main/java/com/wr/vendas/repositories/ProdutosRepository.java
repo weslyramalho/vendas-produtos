@@ -18,5 +18,15 @@ public class ProdutosRepository {
 	public void cadastrarProduto(Produtos produtos) {
 		this.produtosList.add(produtos);
 	}
+	
+	public int cont() {
+		return produtosList.size();
+
+	}
+	
+	public void remove(Long id) {
+		produtosList.removeIf(p -> p.getId() == id);
+	}
+	
 
 }
