@@ -21,18 +21,22 @@ public class ProdutosServices implements IProdutosServices{
 
 	@Override
 	public Produtos cadastrarProduto(Produtos produtos) {
-		return null;
+		if(produtos.getId() == null) {
+			produtos.setId(prodRep.cont() + 1);
+		}
+		prodRep.cadastrarProduto(produtos);
+		return produtos;
 	}
 
 	@Override
 	public void removerProduto(Long id) {
-		// TODO Auto-generated method stub
+		prodRep.remove(id);
 		
 	}
 
 	@Override
 	public void update(Produtos produtos) {
-		// TODO Auto-generated method stub
+		prodRep.update(produtos);
 		
 	}
 
