@@ -20,7 +20,7 @@ public class ProdutosRepository {
 		this.produtosList.add(produtos);
 	}
 	
-	public int cont() {
+	public long cont() {
 		return produtosList.size();
 
 	}
