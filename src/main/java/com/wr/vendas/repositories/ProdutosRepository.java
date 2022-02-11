@@ -35,5 +35,15 @@ public class ProdutosRepository {
 				.collect(Collectors.toList());
 	}
 	
+	public List<Produtos> todosProdutos(){
+		return produtosList;
+	}
+	
+	public Produtos buscaPorId(Long id) {
+		return produtosList.stream()
+				.filter(p -> p.getId().equals(id))
+				.orElse(null);
+	}
+	
 
 }
