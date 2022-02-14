@@ -38,5 +38,9 @@ public class VendasRepository {
 	 public List<Vendas> listarVendas(){
 		 return vendasList;
 	 }
+	 
+	 public Double CalcularVendas(final List<Vendas> produtos) {
+		 return produtos.stream().mapToDouble(Vendas::precoTotal).sum();
+	 }
 
 }
