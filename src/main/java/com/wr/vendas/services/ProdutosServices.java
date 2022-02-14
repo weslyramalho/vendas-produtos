@@ -14,9 +14,6 @@ public class ProdutosServices implements IProdutosServices{
 	
 	@Autowired
 	private ProdutosRepository prodRep;
-	
-	@Value("${produtos.api.url}")
-	private String url;
 
 	@Override
 	public List<Produtos> listarTodosProdutos(String produtos) {
