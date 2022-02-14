@@ -3,6 +3,7 @@ package com.wr.vendas.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.wr.vendas.entities.Produtos;
@@ -13,6 +14,9 @@ public class ProdutosServices implements IProdutosServices{
 	
 	@Autowired
 	private ProdutosRepository prodRep;
+	
+	@Value("${produtos.api.url}")
+	private String url;
 
 	@Override
 	public List<Produtos> listarTodosProdutos(String produtos) {
