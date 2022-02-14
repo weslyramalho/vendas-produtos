@@ -2,11 +2,9 @@ package com.wr.vendas.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
-import com.wr.vendas.entities.Produtos;
 import com.wr.vendas.entities.Vendas;
 
 @Repository
@@ -22,19 +20,10 @@ public class VendasRepository {
 		this.vendasList.add(vendas);
 	}
 	
-	public int cont() {
+	public long cont() {
 		return vendasList.size();
 	}
 	
-	public void remove(Long id) {
-		vendasList.removeIf(v -> v.getId() == id);
-	}
-	
-	public List<Vendas> buscarVendasPorProduto(Produtos produtos){
-		return vendasList.stream()
-				.filter(v -> v.getProdutos().equals(produtos))
-				.collect(Collectors.toList());
-	}
 	 public List<Vendas> listarVendas(){
 		 return vendasList;
 	 }

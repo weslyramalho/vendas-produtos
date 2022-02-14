@@ -3,11 +3,13 @@ package com.wr.vendas.services;
 import java.util.List;
 
 import com.wr.vendas.entities.Produtos;
+import com.wr.vendas.entities.Vendas;
 
 public interface IVendasServices {
 	
-	public List<Produtos> venderProduto(Double total);
-	public Double desconto(Integer desconto);
+	public Vendas venderProduto(Vendas vendas);
+	public List<Vendas> listarVendas(Produtos produtos);
+	
 	
 
 }
