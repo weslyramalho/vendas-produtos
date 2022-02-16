@@ -16,7 +16,7 @@ public class ProdutosServices implements IProdutosServices{
 	private ProdutosRepository prodRep;
 
 	@Override
-	public List<Produtos> listarTodosProdutos(String produtos) {
+	public List<Produtos> listarTodosProdutos(Produtos produtos) {
 		return prodRep.todosProdutos();
 	}
 
